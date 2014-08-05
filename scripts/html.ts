@@ -20,8 +20,8 @@ $("/html") {
 
   remove(".//div[@id='AjaxLoading']")
 
-  # Add accordions.
-  $(".//div[contains(@class, 'FeaturedProducts') or contains(@class, 'NewProducts') or contains(@class, 'TopSellers') or contains(@class, 'PopularProducts') or contains(@class, 'CategoryContent') or contains(@class, 'SideRelatedProducts') or contains(@class, 'SideRecentlyViewed') or @id='SimilarProductsByCustomerViews'][count(*) > 0]") {
+  # Set up carousels.
+  $(".//div[contains(@class, 'FeaturedProducts') or contains(@class, 'NewProducts') or contains(@class, 'TopSellers') or contains(@class, 'PopularProducts') or contains(@class, 'CategoryContent') or contains(@class, 'SideRelatedProducts') or contains(@class, 'SideRecentlyViewed') or @id='SimilarProductsByCustomerViews' or @id='BrandContent'][count(*) > 0]") {
     attribute("data-ur-set", "carousel")
     attribute("data-ur-infinite", "disabled")
 
@@ -43,6 +43,31 @@ $("/html") {
     $(".//a[contains(., 'Choose Options')]") {
       add_class('button choose-options')
     }
+  }
+
+  # Set up accordions.
+  $(".//div[@id='SideShopByBrand' or @id='SideCategoryShopByPrice' or contains(@class, 'BrandList')]") {
+    attribute("data-ur-set", "toggler")
+
+    $(".//h2") {
+      add_class("mw_bar")
+      attribute("data-ur-toggler-component", "button")
+
+      insert("div", class: "mw_indicator")
+    }
+
+    $(".//div[contains(@class, 'BlockContent')]") {
+      attribute("data-ur-toggler-component", "content")
+
+      $('.//a') {
+        insert("div", class: "mw_arrow")
+      }
+    }
+  }
+
+  # Move breadcrumbs.
+  $(".//div[@id='Wrapper']") {
+    move_here(".//div[contains(@class, 'Breadcrumb')]", "top")
   }
 
   # Remove newsletter subscription

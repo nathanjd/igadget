@@ -4,25 +4,7 @@ $$("body") {
 
   $(".//div[@id='Wrapper']") {
     $(".//div[contains(@class, 'Left')]") {
-      # Accordionize.
-      $(".//div[@id='SideShopByBrand' or @id='SideCategoryShopByPrice']") {
-        attribute("data-ur-set", "toggler")
-
-        $(".//h2") {
-          add_class("mw_bar")
-          attribute("data-ur-toggler-component", "button")
-
-          insert("div", class: "mw_indicator")
-        }
-
-        $(".//div[contains(@class, 'BlockContent')]") {
-          attribute("data-ur-toggler-component", "content")
-
-          $('.//a') {
-            insert("div", class: "mw_arrow")
-          }
-        }
-      }
+      
     }
   }
 
