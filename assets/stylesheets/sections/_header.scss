@@ -38,6 +38,10 @@ header.mw-header {
 
           &.CartLink {
             @include sprites-cart();
+
+            a > span {
+              display: none;
+            }
           }
           &.First {
             @include sprites-user();
@@ -100,14 +104,17 @@ header.mw-header {
       margin: 0;
       @include brandGradient();
       color: white;
+      border-radius: 0;
     }
 
     ul {
       margin: 0;
       padding: 0;
       list-style: none;
+      border-width: 0;
 
       li {
+        border-width: 0;
         border-bottom: 1px solid #444;
         
         a {

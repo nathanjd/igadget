@@ -1,3 +1,22 @@
-body._category {
-	
+body._product {
+  #ImageScrollNext, #ImageScrollPrev {
+    display: none;
+  }
+
+  .ProductMain {
+    background-color: #f3f4f8;
+    border: 1px solid #ccc;
+    padding: 10px;
+
+    .DetailRow {
+      margin-bottom: .5em;
+
+      .Label {
+        display: inline-block;
+      }
+      .Value {
+        display: inline-block;
+      }
+    }
+  }
 }
