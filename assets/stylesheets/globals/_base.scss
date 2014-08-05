@@ -1,3 +1,45 @@
 body {
   margin: 8px 0;
 }
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+[data-ur-set="carousel"] {
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid #ccc;
+
+  &#SimilarProductsByCustomerViews {
+    border-top: 0;
+  }
+}
+[data-ur-carousel-component="scroll_container"] {
+  list-style-type: none;
+  @extend .group;
+}
+[data-ur-carousel-component="item"] {
+  float: left;
+  padding: 5px 5px 40px 5px;
+  position: relative;
+  width: 120px;
+  height: 240px;
+}
+
+.button.add-to-cart {
+  display: inline-block;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  @include sprites-AddCartButton();
+  color: transparent;
+}
+.button.choose-options {
+  display: inline-block;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+}

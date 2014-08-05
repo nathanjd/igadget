@@ -1,3 +1,7 @@
 @mixin brandGradient() {
   @include background(linear-gradient(top, #852201, #6a1b00));
 }
+
+@mixin menuItemGradient() {
+  @include background(linear-gradient(top, #000, #222));
+}

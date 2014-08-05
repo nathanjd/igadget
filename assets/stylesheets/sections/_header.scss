@@ -57,7 +57,6 @@ header.mw-header {
     display: block;
     box-sizing: border-box;
     padding: 10px;
-    // #80250a (top) to #572019
     @include brandGradient();
 
     .mw_search {
@@ -85,8 +84,41 @@ header.mw-header {
     .mw_menu_btn {
       float: right;
       display: block;
-      &[data-ur-state="enabled"] span {
+      cursor: pointer;
+
+      &[data-ur-state="enabled"] {
         @extend .sprites-menu-on;
+      }
+    }
+  }
+
+  #Menu {
+    overflow: auto;
+
+    h2 {
+      padding: 10px;
+      margin: 0;
+      @include brandGradient();
+      color: white;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        border-bottom: 1px solid #444;
+        
+        a {
+          display: block;
+          box-sizing: border-box;
+          padding: 10px;
+          width: 100%;
+          height: 100%;
+          color: white;
+          @include menuItemGradient();
+        }
       }
     }
   }

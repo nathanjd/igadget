@@ -2,8 +2,6 @@ $$("body") {
   # Add a class for page specific styling
   add_class("_category")
 
-  remove(".//div[contains(@class, 'NewsletterSubscription')]")
-
   $(".//div[@id='Wrapper']") {
     $(".//div[contains(@class, 'Left')]") {
       # Accordionize.
