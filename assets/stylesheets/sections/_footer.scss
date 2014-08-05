@@ -1,3 +1,26 @@
-footer.mw-footer {
-  
+#Footer {
+  border-top: 1px solid #552010;
+  padding: .5em 0;
+  @include brandGradient();
+  text-align: center;
+  color: #eaad9a;
+  font-size: 84%;
+
+  a {
+    color: white;
+  }
+
+  p {
+    margin: .5em 0;
+  }
+
+  .mw-footer {
+    margin-top: 1em;
+    font-style: italic;
+  }
+
+  .moovweb-logo {
+    display: inline-block;
+    @include sprites-moovweb();
+  }
 }

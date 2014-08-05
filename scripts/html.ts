@@ -18,6 +18,7 @@ $("/html") {
 
   add_assets()
 
+  remove(".//div[@id='AjaxLoading']")
 
   @import "sections/header.ts"
   @import "sections/footer.ts"

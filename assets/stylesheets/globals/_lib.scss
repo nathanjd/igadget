@@ -1,0 +1,3 @@
+@mixin brandGradient() {
+  @include background(linear-gradient(top, #852201, #6a1b00));
+}

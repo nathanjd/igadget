@@ -2,7 +2,12 @@
 @import "globals/bourbon/bourbon";
 @import "globals/bourbon_fix";
 
+// Sprites
+@import "globals/_sprites";
+
 // Import global base styles
+@import "globals/variables";
+@import "globals/lib";
 @import "globals/base";
 
 // Header & Footer
@@ -11,3 +16,5 @@
 
 // Pages
 @import "pages/home";
+@import "pages/category";
+@import "pages/product";
