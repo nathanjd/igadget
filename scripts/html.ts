@@ -46,7 +46,7 @@ $("/html") {
   }
 
   # Set up accordions.
-  $(".//div[@id='SideShopByBrand' or @id='SideCategoryShopByPrice' or contains(@class, 'BrandList')]") {
+  $(".//div[@id='SideShopByBrand' or @id='SideCategoryShopByPrice' or contains(@class, 'BrandList')][count(*) > 0]") {
     attribute("data-ur-set", "toggler")
 
     $(".//h2") {
