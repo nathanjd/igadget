@@ -14,11 +14,31 @@ $$("body") {
             set("")
           }
         }
+
+        $(".//input[@type='image']") {
+          attribute("type", "submit")
+          attribute("value", "Add To Wish List")
+          add_class("add-to-wish-list")
+        }
       }
 
       $(".//form[@id='productDetailsAddToCartForm']") {
-        move_here(".//div[contains(@class, 'BulkDiscount')]", "bottom")
+        move_here(".//div[contains(@class, 'BulkDiscount')]", "bottom") {
+          $('./input') {
+            attribute("type", "submit")
+            attribute("value", "Add To Cart")
+            add_class("add-to-cart")
+          }
+        }
       }
+    }
+  }
+
+  $(".//div[@id='ProductReviews']/a") {
+    add_class("write-a-review")
+    remove("./img")
+    text() {
+      set("Write a Review")
     }
   }
 

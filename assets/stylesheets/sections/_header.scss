@@ -4,6 +4,8 @@ header.mw-header {
 
 #Header {
   border-top: 1px solid black;
+  position: relative;
+
   #Logo {
     // #b4421d (top) to #943517 (bottom)
     @include background(linear-gradient(#b4421d 0, #943517 100%));
@@ -15,6 +17,7 @@ header.mw-header {
       h1 {
         margin: 0;
         padding: 10px;
+        font-weight: 300;
 
         a {
           font-size: 22px;
@@ -25,12 +28,15 @@ header.mw-header {
     }
 
     #TopMenu {
+      position: absolute;
       display: inline-block;
-      float: right;
+      top: 0;
+      right: 0;
 
       ul {
         list-style: none;
         margin: 0;
+        padding: 0;
 
         li {
           display: inline-block;
@@ -77,6 +83,8 @@ header.mw-header {
         margin: 0;
         width: 100%;
         display: block;
+        border-top-left-radius: $borderRadius;
+        border-bottom-left-radius: $borderRadius;
       }
       .mw_search_btn {
         height: 33px;

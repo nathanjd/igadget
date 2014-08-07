@@ -1,7 +1,30 @@
+// fonts
+@mixin headerFont() {
+  font-family: $headerFontFamily;
+  font-weight: $headerFontWeight;
+}
+@mixin bodyFont() {
+  font-family: $bodyFontFamily;
+  font-weight: $bodyFontWeight;
+  line-height: $bodyLineHeight;
+}
+
 @mixin brandGradient() {
   @include background(linear-gradient(top, #852201, #6a1b00));
 }
 
 @mixin menuItemGradient() {
   @include background(linear-gradient(top, #000, #222));
+}
+
+@mixin actionButton() {
+  background: $brandColor;
+  border: 1px solid $brandBorderColor;
+  border-radius: $borderRadius;
+  padding: 20px;
+  font-size: 120%;
+  color: white;
+  box-shadow: 0 2px 4px #888888;
+  cursor: pointer;
+  text-align: center;
 }

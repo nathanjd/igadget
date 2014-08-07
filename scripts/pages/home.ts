@@ -6,4 +6,7 @@ $$("body") {
   $(".//span[@class='Logo1stWord']") {
     log("Look Ma, I fetched something! ", fetch("text()"))
   }
+
+  # Remove shopping cart summary
+  remove(".//div[@id='SideCartContents']")
 }

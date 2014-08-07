@@ -25,6 +25,9 @@ $("/html") {
     attribute("data-ur-set", "carousel")
     attribute("data-ur-infinite", "disabled")
 
+    # 3 wide will not fit on a portrait iPhone
+    attribute("data-ur-fill", 2)
+
     $(".//ul[contains(@class, 'ProductList')]") {
       attribute("data-ur-carousel-component", "scroll_container")
 
@@ -46,17 +49,17 @@ $("/html") {
   }
 
   # Set up accordions.
-  $(".//div[@id='SideShopByBrand' or @id='SideCategoryShopByPrice' or contains(@class, 'BrandList')][count(*) > 0]") {
+  $(".//div[@id='SideShopByBrand' or @id='SideCategoryShopByPrice' or @id='ProductByCategory' or contains(@class, 'BrandList')][count(*) > 0]") {
     attribute("data-ur-set", "toggler")
 
-    $(".//h2") {
+    $(".//*[self::h2 or self::h3]") {
       add_class("mw_bar")
       attribute("data-ur-toggler-component", "button")
 
       insert("div", class: "mw_indicator")
     }
 
-    $(".//div[contains(@class, 'BlockContent')]") {
+    $(".//div[contains(@class, 'BlockContent') or contains(@class, 'FindByCategory')]") {
       attribute("data-ur-toggler-component", "content")
 
       $('.//a') {
@@ -72,6 +75,11 @@ $("/html") {
 
   # Remove newsletter subscription
   remove(".//div[contains(@class, 'NewsletterSubscription')]")
+
+  # Remove modal as it does not behave well on mobile. It appends the modal to
+  #   the end of the body with element level styles that cannot be overriden.
+  #   An error is thrown :(, but it is preferable to the default behaviour.
+  remove(".//script[contains(@src, 'fancybox')]")
 
   @import "sections/header.ts"
   @import "sections/footer.ts"

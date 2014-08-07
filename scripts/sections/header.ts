@@ -16,6 +16,7 @@ $(".//div[@id='Header']") {
     move_here("../../../div[@id='TopMenu']", "bottom") {
       # Remove unwanted top menu items from upper menu
       remove(".//li[not(contains(@class, 'CartLink') or contains(@class, 'First'))]")
+      remove(".//br[contains(@class, 'Clear')]")
     }
   }
 
